@@ -1,0 +1,14 @@
+# This playbook installs and configure Nginx..
+---
+
+- hosts: webservers
+  tasks:
+  
+  - name: ensure nginx is installed.
+    action: yum name=nginx state=installed
+
+  #- name: write the nginx config files
+    #action: template src=corosync.conf dest=/etc/corosync/corosync.conf
+
+  - name: ensure nginx is not running (and not automatically started at boot time)
+    action: service name=nginx state=stopped enabled=no

@@ -50,7 +50,7 @@
     async: 60
     poll:  5
 
-  - name: copy the example pacemaker fragments used to configure clusters.
-    action: copy src=fragments dest=~quantel
+  - name: copy the examples pacemaker configurations.
+    action: copy src=examples dest=/etc/pacemaker mode=0755
     tags:
-     - fragments
+     - examples
